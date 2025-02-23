@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
@@ -15,12 +16,12 @@ export default function Hero() {
             decentralized agriculture, and mentoring others.
           </p>
           <div className="space-x-4">
-            <a href="/blog" className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            <Link href="/blog" className="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
               Check out my latest articles
-            </a>
-            <a href="/projects" className="inline-block px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300">
+            </Link>
+            <Link href="/projects" className="inline-block px-6 py-3 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300">
               Learn about my projects
-            </a>
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
