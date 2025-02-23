@@ -19,5 +19,3 @@ jobs:
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JEREMYLORINO_COM }}
           channelId: live
           projectId: jeremylorino-com
-        env:
-          FIREBASE_CLI_EXPERIMENTS: webframeworks
