@@ -13,7 +13,12 @@ interface MediumFeedItem {
   categories?: string[];
 }
 
-const parser = new Parser<any, MediumFeedItem>();
+// Define feed type to avoid using any
+interface MediumFeed {
+  items: MediumFeedItem[];
+}
+
+const parser = new Parser<MediumFeed, MediumFeedItem>();
 
 export async function getMediumPosts(): Promise<BlogPost[]> {
   try {

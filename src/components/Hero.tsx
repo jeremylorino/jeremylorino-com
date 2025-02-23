@@ -6,10 +6,10 @@ export default function Hero() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Hi, I'm Jeremy Lorino—a software engineer, problem-solver, and adventurer at heart.
+            Hi, I&apos;m Jeremy Lorino—a software engineer, problem-solver, and adventurer at heart.
           </h1>
           <p className="text-lg text-gray-600 mb-8">
-            I'm a software engineer with a passion for leadership, process improvement, and problem-solving. 
+            I&apos;m a software engineer with a passion for leadership, process improvement, and problem-solving. 
             I balance family life, career growth, and physical challenges like running and preparing for marathons. 
             I value fairness, transparency, and actionable insights, and I love exploring topics like industrial automation, 
             decentralized agriculture, and mentoring others.
