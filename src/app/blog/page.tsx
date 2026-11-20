@@ -1,32 +1,36 @@
+import type { Metadata } from 'next';
+import BlogList from '@/components/BlogList';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import BlogPostCard from '@/components/BlogPostCard';
-import { getMediumPosts } from '@/lib/medium';
+import { getAllPosts, getCategories } from '@/lib/blog';
 
-// Mark page as dynamic to ensure fresh data
-export const revalidate = 3600; // Revalidate every hour
+export const metadata: Metadata = {
+  title: 'Blog',
+  description:
+    'Essays and field notes on software engineering, marathons, leadership, and family life.',
+};
 
-export default async function Blog() {
-  const posts = await getMediumPosts();
+export default function Blog() {
+  const posts = getAllPosts();
+  const categories = getCategories();
 
   return (
-    <div>
+    <>
       <Header />
-      <div className="max-w-7xl mx-auto py-12 px-4">
-        <h1 className="text-4xl font-bold mb-8">Latest Articles</h1>
-        {posts.length > 0 ? (
-          <div className="grid gap-8 md:grid-cols-2">
-            {posts.map(post => (
-              <BlogPostCard key={post.id} post={post} />
-            ))}
-          </div>
-        ) : (
-          <div className="text-center py-12">
-            <p className="text-gray-600">
-              No posts found. Please check back later.
-            </p>
-          </div>
-        )}
-      </div>
-    </div>
+      <main className="mx-auto w-full max-w-7xl flex-1 px-4 py-12 sm:px-6">
+        <div className="mb-10 max-w-2xl">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900">
+            Articles &amp; Field Notes
+          </h1>
+          <p className="mt-3 text-lg text-gray-600">
+            {posts.length} essays on software engineering, endurance running,
+            leadership, and raising a family.
+          </p>
+        </div>
+
+        <BlogList posts={posts} categories={categories} />
+      </main>
+      <Footer />
+    </>
   );
-} 
+}
